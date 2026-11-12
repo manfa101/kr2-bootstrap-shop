@@ -1,0 +1,275 @@
+/* =========================================================
+   custom.css — фирменные стили «Зелёного угла» поверх Bootstrap 5
+   КР №2. Рользинг И. В., ЭФБО-13-25
+   Подключается ПОСЛЕ bootstrap.min.css
+   ========================================================= */
+
+/* ---------- 1. Фирменные переменные ---------- */
+:root {
+  --main-color: #2f7d4a;
+  --main-color-dark: #22603a;
+  --main-color-rgb: 47, 125, 74;
+  --accent-color: #e3a33b;
+  --soft-color: #eef4ea;
+  --footer-bg: #1d3324;
+
+  /* Переопределяем цвета Bootstrap под фирменный стиль */
+  --bs-primary: var(--main-color);
+  --bs-primary-rgb: var(--main-color-rgb);
+  --bs-link-color: var(--main-color);
+  --bs-link-color-rgb: var(--main-color-rgb);
+  --bs-link-hover-color: var(--main-color-dark);
+  --bs-link-hover-color-rgb: 34, 96, 58;
+  --bs-body-bg: #fbfaf6;
+  --bs-border-radius: 0.6rem;
+}
+
+/* ---------- 2. Кнопки ---------- */
+.btn-primary {
+  --bs-btn-bg: var(--main-color);
+  --bs-btn-border-color: var(--main-color);
+  --bs-btn-hover-bg: var(--main-color-dark);
+  --bs-btn-hover-border-color: var(--main-color-dark);
+  --bs-btn-active-bg: var(--main-color-dark);
+  --bs-btn-active-border-color: var(--main-color-dark);
+  --bs-btn-disabled-bg: var(--main-color);
+  --bs-btn-disabled-border-color: var(--main-color);
+  --bs-btn-focus-shadow-rgb: var(--main-color-rgb);
+}
+
+.btn-outline-primary {
+  --bs-btn-color: var(--main-color);
+  --bs-btn-border-color: var(--main-color);
+  --bs-btn-hover-bg: var(--main-color);
+  --bs-btn-hover-border-color: var(--main-color);
+  --bs-btn-active-bg: var(--main-color-dark);
+  --bs-btn-active-border-color: var(--main-color-dark);
+  --bs-btn-focus-shadow-rgb: var(--main-color-rgb);
+}
+
+.btn {
+  font-weight: 600;
+}
+
+/* Видимый фокус для клавиатуры */
+.btn:focus-visible,
+a:focus-visible {
+  outline: 3px solid var(--accent-color);
+  outline-offset: 2px;
+}
+
+/* ---------- 3. Навигация и компоненты ---------- */
+.navbar .nav-link {
+  font-weight: 500;
+  border-radius: 0.5rem;
+  padding-inline: 0.8rem !important;
+}
+
+.navbar .nav-link:hover {
+  background-color: var(--soft-color);
+}
+
+.navbar .nav-link.active {
+  color: var(--main-color);
+  background-color: #d8ebd9;
+}
+
+.pagination {
+  --bs-pagination-active-bg: var(--main-color);
+  --bs-pagination-active-border-color: var(--main-color);
+  --bs-pagination-color: var(--main-color);
+  --bs-pagination-hover-color: var(--main-color-dark);
+  --bs-pagination-focus-box-shadow: 0 0 0 0.25rem rgba(var(--main-color-rgb), 0.25);
+}
+
+.accordion {
+  --bs-accordion-active-color: var(--main-color-dark);
+  --bs-accordion-active-bg: var(--soft-color);
+  --bs-accordion-btn-focus-box-shadow: 0 0 0 0.25rem rgba(var(--main-color-rgb), 0.25);
+}
+
+.nav-tabs .nav-link {
+  color: var(--bs-body-color);
+}
+
+.nav-tabs .nav-link.active {
+  color: var(--main-color);
+  font-weight: 600;
+}
+
+.form-control:focus,
+.form-select:focus,
+.form-check-input:focus {
+  border-color: var(--main-color);
+  box-shadow: 0 0 0 0.25rem rgba(var(--main-color-rgb), 0.2);
+}
+
+.form-check-input:checked {
+  background-color: var(--main-color);
+  border-color: var(--main-color);
+}
+
+/* Подсветка ошибки после того, как пользователь заполнил поле */
+.form-control:user-invalid,
+.form-select:user-invalid {
+  border-color: var(--bs-danger);
+}
+
+/* ---------- 4. Вспомогательный фон ---------- */
+.bg-brand-soft {
+  background-color: var(--soft-color) !important;
+}
+
+/* ---------- 5. Hero-блок ---------- */
+.hero {
+  background: linear-gradient(135deg, var(--soft-color) 0%, #fbfaf6 70%);
+}
+
+.hero__carousel .carousel-item img {
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.hero__carousel .carousel-caption {
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 1rem 1.5rem 2.5rem;
+  background: linear-gradient(transparent, rgba(29, 51, 36, 0.75));
+}
+
+/* ---------- 6. Преимущества ---------- */
+.feature {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.feature:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.08);
+}
+
+.feature__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  font-size: 1.4rem;
+  background-color: #d8ebd9;
+  border-radius: 50%;
+}
+
+/* ---------- 7. Карточки товаров (модификация card) ---------- */
+.product-card {
+  position: relative;
+  overflow: hidden;
+  border-color: #e3e9df;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.product-card:hover,
+.product-card:focus-within {
+  transform: translateY(-4px);
+  box-shadow: 0 0.75rem 1.5rem rgba(0, 0, 0, 0.1);
+}
+
+.product-card .card-img-top {
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.product-card__badge {
+  position: absolute;
+  top: 0.75rem;
+  left: 0.75rem;
+  z-index: 2;
+}
+
+.product-card--sold-out .card-img-top {
+  filter: grayscale(0.8);
+  opacity: 0.7;
+}
+
+/* ---------- 8. Каталог: фильтры прилипают при прокрутке на десктопе ---------- */
+@media (min-width: 992px) {
+  .catalog-filters {
+    position: sticky;
+    top: 5.5rem;
+  }
+}
+
+/* ---------- 9. Карта на странице контактов (нарисована на CSS) ---------- */
+.map {
+  position: relative;
+  height: 240px;
+  overflow: hidden;
+  background-color: #e6efe2;
+  background-image:
+    linear-gradient(90deg, transparent 46%, #fff 46%, #fff 54%, transparent 54%),
+    linear-gradient(0deg, transparent 58%, #fff 58%, #fff 64%, transparent 64%),
+    linear-gradient(30deg, transparent 70%, #fff 70%, #fff 73%, transparent 73%);
+}
+
+.map__pin {
+  position: absolute;
+  top: 38%;
+  left: 50%;
+  width: 28px;
+  height: 28px;
+  background-color: #c8452d;
+  border: 4px solid #fff;
+  border-radius: 50% 50% 50% 0;
+  transform: translate(-50%, -100%) rotate(-45deg);
+}
+
+.map__label {
+  position: absolute;
+  top: 40%;
+  left: calc(50% + 20px);
+}
+
+.map__metro {
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+}
+
+/* ---------- 10. Страница «Заявка принята» ---------- */
+.thanks-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 4.5rem;
+  height: 4.5rem;
+  font-size: 2rem;
+  color: #fff;
+  background-color: var(--main-color);
+  border-radius: 50%;
+}
+
+/* ---------- 11. Подвал ---------- */
+.site-footer {
+  color: #b9cbbd;
+  background-color: var(--footer-bg);
+}
+
+.site-footer a {
+  color: #dfe9e1;
+  text-decoration: none;
+}
+
+.site-footer a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+/* ---------- 12. Уточнения для маленьких экранов ---------- */
+@media (max-width: 575.98px) {
+  .display-5 {
+    font-size: 2rem;
+  }
+
+  .hero__carousel .carousel-caption h2 {
+    font-size: 1rem;
+  }
+}

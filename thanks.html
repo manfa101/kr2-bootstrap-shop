@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Заявка принята — Зелёный угол</title>
+  <meta name="description" content="Спасибо за заявку! Мы свяжемся с вами в течение 15 минут.">
+  <link rel="icon" href="images/logo.svg" type="image/svg+xml">
+  <!-- Bootstrap 5.3.8 через CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Собственные стили подключаются после Bootstrap -->
+  <link rel="stylesheet" href="css/custom.css">
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg bg-white border-bottom sticky-top shadow-sm" aria-label="Основное меню">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center gap-2 fw-bold" href="index.html">
+        <img src="images/logo.svg" alt="" width="36" height="36">
+        Зелёный угол
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Открыть меню">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="index.html">Главная</a></li>
+          <li class="nav-item"><a class="nav-link" href="catalog.html">Каталог</a></li>
+          <li class="nav-item"><a class="nav-link" href="order.html">Оформить заказ</a></li>
+          <li class="nav-item"><a class="nav-link" href="contacts.html">Контакты</a></li>
+        </ul>
+        <button class="btn btn-outline-primary" type="button" data-bs-toggle="modal" data-bs-target="#callbackModal">Заказать звонок</button>
+      </div>
+    </div>
+  </nav>
+
+  <main id="main">
+    <div class="container py-5">
+      <div class="row justify-content-center">
+        <div class="col-12 col-md-8 col-lg-6">
+          <div class="card border-0 shadow p-4 p-md-5 text-center">
+            <div class="thanks-icon mx-auto mb-3" aria-hidden="true">✓</div>
+            <h1 class="h3">Заявка принята!</h1>
+            <div class="alert alert-success mt-3" role="status">
+              Спасибо! Мы перезвоним в течение 15 минут в рабочее время (10:00–21:00).
+            </div>
+            <div class="d-flex flex-wrap justify-content-center gap-2">
+              <a class="btn btn-primary" href="catalog.html">Вернуться в каталог</a>
+              <a class="btn btn-outline-primary" href="index.html">На главную</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer mt-5 pt-5 pb-4">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-12 col-md-6 col-lg-4">
+          <p class="h5 text-white">Зелёный угол</p>
+          <p class="small mb-0">Магазин комнатных растений с доставкой по Москве. Учебный проект КР №2.</p>
+        </div>
+        <div class="col-6 col-md-3 col-lg-2">
+          <p class="fw-semibold text-white">Магазин</p>
+          <ul class="list-unstyled small">
+            <li><a href="catalog.html">Каталог</a></li>
+            <li><a href="product.html">Хит продаж</a></li>
+            <li><a href="order.html">Оформить заказ</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-md-3 col-lg-2">
+          <p class="fw-semibold text-white">Покупателям</p>
+          <ul class="list-unstyled small">
+            <li><a href="index.html#faq">Вопросы и ответы</a></li>
+            <li><a href="index.html#reviews">Отзывы</a></li>
+            <li><a href="contacts.html">Контакты</a></li>
+          </ul>
+        </div>
+        <div class="col-12 col-lg-4">
+          <p class="fw-semibold text-white">Связаться</p>
+          <p class="small mb-1"><a href="tel:+74950000000">+7 (495) 000-00-00</a></p>
+          <p class="small mb-1"><a href="mailto:hello@zeleny-ugol.example">hello@zeleny-ugol.example</a></p>
+          <p class="small mb-0">Ежедневно с 10:00 до 21:00</p>
+        </div>
+      </div>
+      <hr class="border-secondary my-4">
+      <p class="small mb-0">© 2026 Зелёный угол. Рользинг Иван Викторович, ЭФБО-13-25</p>
+    </div>
+  </footer>
+
+  <div class="modal fade" id="callbackModal" tabindex="-1" aria-labelledby="callbackModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <form action="thanks.html" method="get">
+          <div class="modal-header">
+            <h2 class="modal-title fs-5" id="callbackModalLabel">Заказать обратный звонок</h2>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+          </div>
+          <div class="modal-body">
+            <p class="text-body-secondary small">Флорист перезвонит в течение 15 минут и поможет подобрать растение.</p>
+            <div class="mb-3">
+              <label for="cbName" class="form-label">Имя</label>
+              <input type="text" class="form-control" id="cbName" name="name" autocomplete="name" required>
+            </div>
+            <label for="cbPhone" class="form-label">Телефон</label>
+            <div class="input-group mb-3">
+              <span class="input-group-text">+7</span>
+              <input type="tel" class="form-control" id="cbPhone" name="phone" placeholder="900 000-00-00" autocomplete="tel-national" required>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="cbAgree" name="agree" required>
+              <label class="form-check-label small" for="cbAgree">Согласен на обработку персональных данных</label>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-light" data-bs-dismiss="modal">Отмена</button>
+            <button type="submit" class="btn btn-primary">Жду звонка</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS Bundle: navbar, modal, carousel, tabs, accordion, offcanvas -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

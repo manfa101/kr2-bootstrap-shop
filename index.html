@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Зелёный угол — магазин комнатных растений</title>
+  <meta name="description" content="Комнатные растения с доставкой по Москве: монстеры, фикусы, суккуленты.">
+  <link rel="icon" href="images/logo.svg" type="image/svg+xml">
+  <!-- Bootstrap 5.3.8 через CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Собственные стили подключаются после Bootstrap -->
+  <link rel="stylesheet" href="css/custom.css">
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg bg-white border-bottom sticky-top shadow-sm" aria-label="Основное меню">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center gap-2 fw-bold" href="index.html">
+        <img src="images/logo.svg" alt="" width="36" height="36">
+        Зелёный угол
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Открыть меню">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link active" aria-current="page" href="index.html">Главная</a></li>
+          <li class="nav-item"><a class="nav-link" href="catalog.html">Каталог</a></li>
+          <li class="nav-item"><a class="nav-link" href="order.html">Оформить заказ</a></li>
+          <li class="nav-item"><a class="nav-link" href="contacts.html">Контакты</a></li>
+        </ul>
+        <button class="btn btn-outline-primary" type="button" data-bs-toggle="modal" data-bs-target="#callbackModal">Заказать звонок</button>
+      </div>
+    </div>
+  </nav>
+
+  <main id="main">
+    <section class="hero py-5">
+      <div class="container">
+        <div class="row align-items-center g-4 g-lg-5">
+          <div class="col-12 col-lg-6">
+            <span class="badge rounded-pill text-bg-light text-success mb-3">Доставка по Москве за 1 день</span>
+            <h1 class="display-5 fw-bold mb-3">Живые растения для дома и&nbsp;офиса</h1>
+            <p class="lead text-body-secondary mb-4">Подберём растение под ваш свет и интерьер. Каждое растение проходит карантин и приезжает в новом горшке.</p>
+            <div class="d-flex flex-wrap gap-3">
+              <a class="btn btn-primary btn-lg" href="catalog.html">Перейти в каталог</a>
+              <button class="btn btn-outline-primary btn-lg" type="button" data-bs-toggle="modal" data-bs-target="#callbackModal">Помочь с выбором</button>
+            </div>
+          </div>
+          <div class="col-12 col-lg-6">
+            <div id="heroCarousel" class="carousel slide carousel-fade hero__carousel shadow rounded-4 overflow-hidden" data-bs-ride="carousel">
+              <div class="carousel-indicators">
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Слайд 1"></button>
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1" aria-label="Слайд 2"></button>
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2" aria-label="Слайд 3"></button>
+              </div>
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img src="images/monstera.svg" class="d-block w-100" alt="Монстера в горшке">
+                  <div class="carousel-caption">
+                    <h2 class="h5">Монстера — хит сезона</h2>
+                    <p class="mb-0">от 1 890 ₽</p>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <img src="images/sansevieria.svg" class="d-block w-100" alt="Сансевиерия в горшке">
+                  <div class="carousel-caption">
+                    <h2 class="h5">Неприхотливые растения −20%</h2>
+                    <p class="mb-0">до конца месяца</p>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <img src="images/ficus.svg" class="d-block w-100" alt="Фикус лировидный в горшке">
+                  <div class="carousel-caption">
+                    <h2 class="h5">Новинка: фикус лировидный</h2>
+                    <p class="mb-0">высота 80–90 см</p>
+                  </div>
+                </div>
+              </div>
+              <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Предыдущий</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Следующий</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="container mt-4">
+      <div class="alert alert-success d-flex align-items-center gap-2 mb-0" role="alert">
+        <span aria-hidden="true">🎁</span>
+        <div><strong>Скидка 10% на первый заказ</strong> — укажите промокод <code>GREEN10</code> в комментарии к заказу.</div>
+      </div>
+    </div>
+
+    <section class="py-5" id="advantages" aria-labelledby="advTitle">
+      <div class="container">
+        <h2 class="h3 mb-4" id="advTitle">Почему выбирают нас</h2>
+        <div class="row g-4">
+          <div class="col-12 col-sm-6 col-lg-3">
+            <div class="feature h-100 p-4 bg-white rounded-4 border">
+              <div class="feature__icon mb-3" aria-hidden="true">🌱</div>
+              <h3 class="h6 fw-bold">Здоровые растения</h3>
+              <p class="small text-body-secondary mb-0">Карантин 14 дней и осмотр перед отправкой.</p>
+            </div>
+          </div>
+          <div class="col-12 col-sm-6 col-lg-3">
+            <div class="feature h-100 p-4 bg-white rounded-4 border">
+              <div class="feature__icon mb-3" aria-hidden="true">🚚</div>
+              <h3 class="h6 fw-bold">Бережная доставка</h3>
+              <p class="small text-body-secondary mb-0">Фиксируем горшок, зимой утепляем упаковку.</p>
+            </div>
+          </div>
+          <div class="col-12 col-sm-6 col-lg-3">
+            <div class="feature h-100 p-4 bg-white rounded-4 border">
+              <div class="feature__icon mb-3" aria-hidden="true">💬</div>
+              <h3 class="h6 fw-bold">Помощь с уходом</h3>
+              <p class="small text-body-secondary mb-0">Консультации флориста 30 дней после покупки.</p>
+            </div>
+          </div>
+          <div class="col-12 col-sm-6 col-lg-3">
+            <div class="feature h-100 p-4 bg-white rounded-4 border">
+              <div class="feature__icon mb-3" aria-hidden="true">↩</div>
+              <h3 class="h6 fw-bold">Гарантия 14 дней</h3>
+              <p class="small text-body-secondary mb-0">Заменим растение, если с ним что-то случится.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-5 bg-brand-soft" id="popular" aria-labelledby="popTitle">
+      <div class="container">
+        <div class="d-flex justify-content-between align-items-baseline mb-4">
+          <h2 class="h3 mb-0" id="popTitle">Популярные товары</h2>
+          <a class="link-primary fw-semibold text-decoration-none" href="catalog.html">Весь каталог →</a>
+        </div>
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-4">
+          <div class="col">
+            <article class="card h-100 product-card">
+              <span class="badge text-bg-warning product-card__badge">Хит</span>
+              <img src="images/monstera.svg" class="card-img-top" alt="Монстера в горшке">
+              <div class="card-body d-flex flex-column">
+                <h3 class="card-title h5">Монстера деликатесная</h3>
+                <p class="card-text text-body-secondary small">Крупные резные листья, быстро растёт.</p>
+                <div class="d-flex justify-content-between align-items-center mt-auto">
+                  <span class="fs-5 fw-bold">1 890 ₽</span>
+                  <a href="product.html" class="btn btn-primary btn-sm">Подробнее</a>
+                </div>
+              </div>
+            </article>
+          </div>
+          <div class="col">
+            <article class="card h-100 product-card">
+              <span class="badge text-bg-danger product-card__badge">−20%</span>
+              <img src="images/sansevieria.svg" class="card-img-top" alt="Сансевиерия в горшке">
+              <div class="card-body d-flex flex-column">
+                <h3 class="card-title h5">Сансевиерия</h3>
+                <p class="card-text text-body-secondary small">Переносит тень и редкий полив.</p>
+                <div class="d-flex justify-content-between align-items-center mt-auto">
+                  <span><s class="text-body-secondary small me-1">1 290 ₽</s><span class="fs-5 fw-bold text-danger">990 ₽</span></span>
+                  <a href="product.html" class="btn btn-primary btn-sm">Подробнее</a>
+                </div>
+              </div>
+            </article>
+          </div>
+          <div class="col">
+            <article class="card h-100 product-card">
+              <span class="badge text-bg-success product-card__badge">Новинка</span>
+              <img src="images/ficus.svg" class="card-img-top" alt="Фикус лировидный в горшке">
+              <div class="card-body d-flex flex-column">
+                <h3 class="card-title h5">Фикус лировидный</h3>
+                <p class="card-text text-body-secondary small">Эффектное дерево с листьями-«скрипками».</p>
+                <div class="d-flex justify-content-between align-items-center mt-auto">
+                  <span class="fs-5 fw-bold">2 490 ₽</span>
+                  <a href="product.html" class="btn btn-primary btn-sm">Подробнее</a>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-5" id="reviews" aria-labelledby="revTitle">
+      <div class="container">
+        <h2 class="h3 mb-4" id="revTitle">Отзывы покупателей</h2>
+        <div class="row g-4">
+          <div class="col-12 col-md-4">
+            <figure class="card h-100 border-0 shadow-sm p-4 mb-0">
+              <blockquote class="mb-3"><p class="mb-0">Монстера приехала в отличном состоянии. Через месяц выпустила новый лист!</p></blockquote>
+              <figcaption class="text-body-secondary small mt-auto">— Анна, Москва <span class="badge text-bg-light ms-1">★ 5</span></figcaption>
+            </figure>
+          </div>
+          <div class="col-12 col-md-4">
+            <figure class="card h-100 border-0 shadow-sm p-4 mb-0">
+              <blockquote class="mb-3"><p class="mb-0">Помогли подобрать растения в офис без окон. Всё прижилось.</p></blockquote>
+              <figcaption class="text-body-secondary small mt-auto">— Дмитрий, офис-менеджер <span class="badge text-bg-light ms-1">★ 5</span></figcaption>
+            </figure>
+          </div>
+          <div class="col-12 col-md-4">
+            <figure class="card h-100 border-0 shadow-sm p-4 mb-0">
+              <blockquote class="mb-3"><p class="mb-0">Взяла сансевиерию по скидке, в комплекте была понятная памятка.</p></blockquote>
+              <figcaption class="text-body-secondary small mt-auto">— Мария, Химки <span class="badge text-bg-light ms-1">★ 4</span></figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="pb-5" id="faq" aria-labelledby="faqTitle">
+      <div class="container">
+        <div class="row g-4">
+          <div class="col-12 col-lg-4">
+            <h2 class="h3" id="faqTitle">Вопросы и ответы</h2>
+            <p class="text-body-secondary">Не нашли ответ? Позвоните нам или закажите обратный звонок.</p>
+            <button class="btn btn-outline-primary" type="button" data-bs-toggle="modal" data-bs-target="#callbackModal">Задать вопрос</button>
+          </div>
+          <div class="col-12 col-lg-8">
+            <div class="accordion" id="faqAccordion">
+              <div class="accordion-item">
+                <h3 class="accordion-header">
+                  <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1" aria-expanded="true" aria-controls="faq1">Растение не замёрзнет при доставке зимой?</button>
+                </h3>
+                <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                  <div class="accordion-body">При температуре ниже +5 °C упаковываем растения в термопакет, курьер везёт их в тёплом салоне.</div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h3 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2" aria-expanded="false" aria-controls="faq2">Что делать, если растение пришло повреждённым?</button>
+                </h3>
+                <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                  <div class="accordion-body">Сфотографируйте его при курьере и напишите нам — заменим растение или вернём деньги.</div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h3 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3" aria-expanded="false" aria-controls="faq3">Сколько стоит доставка?</button>
+                </h3>
+                <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                  <div class="accordion-body">Курьером по Москве — 390 ₽, от 5 000 ₽ бесплатно. Самовывоз из шоурума — бесплатно.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer mt-5 pt-5 pb-4">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-12 col-md-6 col-lg-4">
+          <p class="h5 text-white">Зелёный угол</p>
+          <p class="small mb-0">Магазин комнатных растений с доставкой по Москве. Учебный проект КР №2.</p>
+        </div>
+        <div class="col-6 col-md-3 col-lg-2">
+          <p class="fw-semibold text-white">Магазин</p>
+          <ul class="list-unstyled small">
+            <li><a href="catalog.html">Каталог</a></li>
+            <li><a href="product.html">Хит продаж</a></li>
+            <li><a href="order.html">Оформить заказ</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-md-3 col-lg-2">
+          <p class="fw-semibold text-white">Покупателям</p>
+          <ul class="list-unstyled small">
+            <li><a href="index.html#faq">Вопросы и ответы</a></li>
+            <li><a href="index.html#reviews">Отзывы</a></li>
+            <li><a href="contacts.html">Контакты</a></li>
+          </ul>
+        </div>
+        <div class="col-12 col-lg-4">
+          <p class="fw-semibold text-white">Связаться</p>
+          <p class="small mb-1"><a href="tel:+74950000000">+7 (495) 000-00-00</a></p>
+          <p class="small mb-1"><a href="mailto:hello@zeleny-ugol.example">hello@zeleny-ugol.example</a></p>
+          <p class="small mb-0">Ежедневно с 10:00 до 21:00</p>
+        </div>
+      </div>
+      <hr class="border-secondary my-4">
+      <p class="small mb-0">© 2026 Зелёный угол. Рользинг Иван Викторович, ЭФБО-13-25</p>
+    </div>
+  </footer>
+
+  <div class="modal fade" id="callbackModal" tabindex="-1" aria-labelledby="callbackModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <form action="thanks.html" method="get">
+          <div class="modal-header">
+            <h2 class="modal-title fs-5" id="callbackModalLabel">Заказать обратный звонок</h2>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+          </div>
+          <div class="modal-body">
+            <p class="text-body-secondary small">Флорист перезвонит в течение 15 минут и поможет подобрать растение.</p>
+            <div class="mb-3">
+              <label for="cbName" class="form-label">Имя</label>
+              <input type="text" class="form-control" id="cbName" name="name" autocomplete="name" required>
+            </div>
+            <label for="cbPhone" class="form-label">Телефон</label>
+            <div class="input-group mb-3">
+              <span class="input-group-text">+7</span>
+              <input type="tel" class="form-control" id="cbPhone" name="phone" placeholder="900 000-00-00" autocomplete="tel-national" required>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="cbAgree" name="agree" required>
+              <label class="form-check-label small" for="cbAgree">Согласен на обработку персональных данных</label>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-light" data-bs-dismiss="modal">Отмена</button>
+            <button type="submit" class="btn btn-primary">Жду звонка</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS Bundle: navbar, modal, carousel, tabs, accordion, offcanvas -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
